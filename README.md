@@ -1,2 +1,2 @@
-# chatgpt-client
-Unofficial client for ChatGPT on Tkinter
+# Kiwi - Unofficial client for ChatGPT
+Unofficial client for ChatGPT written in Tkinter
