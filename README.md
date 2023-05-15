@@ -4,6 +4,7 @@ Written in: Python with os, openai, json, tkinter, locale, threading, platform a
 Pros:
  - Lightweight. Thanks to Python and Tkinter, Kiwi can even run in the microwave!
  - Open source. Modify what you want and how you want.
+
 Cons:
  - No formatting
  - No wrap to next line
