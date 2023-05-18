@@ -9,13 +9,12 @@ Pros:
 
 Cons:
  - No formatting
- - Waiting 10 seconds under heavy load
- - Requires an API key from OpenAI
 
 Requirements:
  - Python >=3.7.1
- - OpenAI library *(can be installed with pip)*
- - OpenAI account with a free trial balance or a pre-loaded balance and an active API key.
+ - [OpenAI library](https://pypi.org/project/openai/) *(can be installed with pip)*
+ - Tkinter library (built into Python)
+ - OpenAI account with a [free trial balance or a pre-loaded balance](https://platform.openai.com/account/usage) and an [active API key](https://platform.openai.com/account/api-keys).
  - Active internet connection
 
 But I will try to correct the cons over time (except for the second and third) and the program will become much better!
