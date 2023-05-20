@@ -17,5 +17,5 @@ Requirements:
  - OpenAI account with a [free trial balance or a pre-loaded balance](https://platform.openai.com/account/usage) and an [active API key](https://platform.openai.com/account/api-keys).
  - Active internet connection
 
-But I will try to correct the cons over time (except for the second and third) and the program will become much better!
+But I will try to correct the cons over time and the program will become much better!
 If you're interested, look forward to the **first release**!
