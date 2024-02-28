@@ -5,11 +5,10 @@ import tkinter
 import tkinter.messagebox
 import tkinter.simpledialog
 import tkinter.ttk
+
 # Installing the API key and history
 openai.api_key = "YOUR API KEY HERE"
-history = [
-    {"role": "system", "content": "You are ChatGPT by OpenAI. Say hello to the user!"}
-]
+history = []
 
 # Creating a Tkinter Window and adding required elements
 root = tkinter.Tk()
@@ -42,16 +41,11 @@ def api_key():
     if new_api is not None:
         openai.api_key = new_api
         try:
-            result = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[
-                    {"role": "system", "content": "Say 'Yes, it works!'"}
-                ]
-            )
-            answer = str(result.choices[0].message["content"])
-            tkinter.messagebox.showinfo("New API key", answer)
+            _ = openai.models.list()
         except Exception as e:
             tkinter.messagebox.showerror("Error", str(e))
+        else:
+            tkinter.messagebox.showinfo("New API key", 'Yes, it works!')
 
 
 # Clear all chat
@@ -61,14 +55,11 @@ def clear_all():
         "New request",
         "Are you sure you want to delete the entire chat?\nAlong with the chat, ChatGPT will erase memory and all permissions.\nAre you sure you want to delete the chat?")
     if getuserreq:
-        history = [
-            {"role": "system", "content": "You are ChatGPT by OpenAI. Say hello to the user!"}
-        ]
+        history = []
         historylist.delete(0, tkinter.END)
 
 
 def getResponseGPT():
-
     global history
     while True:
         try:
