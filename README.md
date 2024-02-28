@@ -2,7 +2,7 @@
 Unofficial client for ChatGPT written in Tkinter<br>
 Written in: Python with os, openai, json, tkinter and threading libraries<br><br>
 Pros:
- - Lightweight. Thanks to Python and Tkinter, Kiwi can even run in the microwave!
+ - Lightweight.
  - Open source. Modify what you want and how you want.
  - Export chats as TXT (logs) and JSON
  - Two versions: console and GUI
