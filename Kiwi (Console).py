@@ -1,37 +1,31 @@
 import openai
 import sys
 import time
-history = [
-    {"role": "system", "content": "You are ChatGPT and your task is to help people as much as possible."}
-]
+history = []
 
 
 def api_key():
     global api_key
     newapi = input("Type your API key (Enter to cancel)")
-    if not newapi.strip() == "":
+    if newapi.strip():
         openai.api_key = newapi.strip()
         try:
-            completion = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[
-                    {"role": "system", "content": "Say 'Yes, it works!'"}
-                ]
-            )
-            answer = str(completion.choices[0].message["content"])
-            print(answer)
+            _ = openai.models.list()
         except Exception as e:
             print("Error", e)
+        else:
+            print('Yes, it works!')
     else:
         sys.exit()
 
 
 answer = input(
     "Enter key to continue\nTo set a key, type Y.\nCTRL+C to exit.\n:")
-if answer.upper().strip() == "Y":
-    api_key()
-else:
-    sys.exit()
+if answer.strip():
+    if answer.upper().strip() == "Y":
+        api_key()
+    else:
+        sys.exit()
 
 
 def submitmsg():
@@ -57,15 +51,14 @@ def submitmsg():
                     if element != multiline_array[0] and element.strip() != "```":
                         print("         " + element)
             except openai.error.RateLimitError:
-                import time
                 print(
                     "Please wait 10 seconds.\nYou have reached the limit or the server is under heavy load.\n")
                 time.sleep(10)
             except Exception as e:
-                print("Failed to generate response: " + str(e))
+                print("[ERR] " + str(e))
     except KeyboardInterrupt:
-        print("See you next time!")
-        time.sleep(2)
+        print("Exit.")
+        time.sleep(0.5)
         sys.exit()
 
 
